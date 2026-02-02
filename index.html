@@ -106,7 +106,7 @@
                 <div class="order-2 md:order-1 relative">
                     <div class="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative shadow-2xl">
                         <img 
-                            src="https://photos.google.com/share/AF1QipP32dmJOj7blXbd8TZxF86_4kI5a-WE__L21OSwuYGN4-DhUGuC3Iik5rYqcU6nAg/photo/AF1QipOfRxElJW5lHV5P0eNyzSnmge2W-to1Vsb7I5Ka?key=Rkl4ZElfS2VSQkoyclJnVG80V1VlZThVdzVMRnp3" 
+                            src="https://raw.githubusercontent.com/atmabodha/atmabodha.github.io/main/IMG-20241010-WA0006.jpg" 
                             alt="Ancient Manuscript and Code" 
                             class="w-full h-full object-cover opacity-80"
                         />
@@ -190,7 +190,7 @@
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a 
-                    href="https://github.com/atmabodha" 
+                    href="mailto:atmabodha@gmail.com" 
                     target="_blank"
                     rel="noopener noreferrer"
                     class="px-8 py-4 bg-saffron-600 text-white rounded-lg font-bold text-lg hover:bg-saffron-500 transition-all shadow-[0_0_20px_rgba(234,88,12,0.5)] hover:shadow-[0_0_30px_rgba(234,88,12,0.6)] flex items-center justify-center gap-2"
@@ -220,19 +220,19 @@
                         An open-source initiative dedicated to preserving and analyzing ancient Indian philosophical texts using modern Artificial Intelligence and Machine Learning technologies.
                     </p>
                 </div>
-                <div>
+                <!-- <div>
                     <h3 class="text-white font-semibold mb-4">Resources</h3>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#" class="hover:text-saffron-500 transition-colors">Documentation</a></li>
                         <li><a href="#" class="hover:text-saffron-500 transition-colors">API Reference</a></li>
                         <li><a href="#" class="hover:text-saffron-500 transition-colors">Contributing</a></li>
                     </ul>
-                </div>
+                </div> -->
                 <div>
                     <h3 class="text-white font-semibold mb-4">Community</h3>
                     <ul class="space-y-2 text-sm">
                         <li><a href="https://github.com/atmabodha" class="hover:text-saffron-500 transition-colors">GitHub</a></li>
-                        <li><a href="#" class="hover:text-saffron-500 transition-colors">Discord</a></li>
+                        <li><a href="https://chat.whatsapp.com/E3erN4OoFoMIIw5GzDO0Go" class="hover:text-saffron-500 transition-colors">WhatsApp</a></li>
                         <li><a href="https://www.utmt.org/" class="hover:text-saffron-500 transition-colors">UTMT</a></li>
                     </ul>
                 </div>
@@ -252,38 +252,34 @@
         const vedantaDatasets = [
             {
                 id: 'd1',
-                title: 'Bhagavad Gita Parallel Corpus',
+                title: 'Bhagavad Gita Corpus',
                 description: 'A comprehensive alignment of Sanskrit verses with English translations, including word-by-word grammatical analysis for NLP training.',
-                tags: ['Sanskrit', 'English', 'Alignment', 'Gita'],
-                githubUrl: 'https://github.com/atmabodha/Vedanta_Datasets/tree/master/Bhagavad_Gita',
-                stats: { size: '15MB', stars: 120 },
+                tags: ['Sanskrit', 'Translation', 'Categories'],
+                githubUrl: 'https://github.com/atmabodha/Vedanta_Datasets/tree/main/Bhagwad_Gita',
                 icon: 'scroll'
             },
             {
                 id: 'd2',
-                title: 'Upanishad Sentiment & Topic Model',
-                description: 'Labeled dataset classifying verses from Major Upanishads based on philosophical themes (Brahman, Atman, Maya) and emotional tone.',
-                tags: ['Classification', 'Theology', 'NLP'],
-                githubUrl: 'https://github.com/atmabodha/Vedanta_Datasets/tree/master/Upanishads',
-                stats: { size: '45MB' },
+                title: 'Upanishads',
+                description: 'Verses from Major Upanishads based on philosophical themes (Brahman, Atman, Maya, etc).',
+                tags: ['Philosophy', 'Self', 'Knowledge'],
+                githubUrl: 'https://github.com/atmabodha/Vedanta_Datasets/tree/main/Upanishads',
                 icon: 'database'
             },
             {
                 id: 'd3',
-                title: 'Shankara Bhashya Structured Text',
+                title: 'Patanjali Yoga Sutras',
                 description: 'Digitized and structured commentary of Adi Shankaracharya on the Brahma Sutras, formatted for semantic search and retrieval.',
-                tags: ['Commentary', 'Advaita', 'Structured'],
-                githubUrl: 'https://github.com/atmabodha/Vedanta_Datasets/tree/master/Brahma_Sutras',
-                stats: { size: '120MB' },
+                tags: ['Yoga', 'Meditation', 'Mysticism'],
+                githubUrl: 'https://github.com/atmabodha/Vedanta_Datasets/tree/main/Patanjali_Yoga_Sutras',
                 icon: 'layers'
             },
             {
                 id: 'd4',
-                title: 'Vedantic Glossary (Multilingual)',
-                description: 'A mapped dictionary of technical Vedantic terms across Sanskrit, English, Hindi, and Tamil for cross-lingual understanding.',
-                tags: ['Dictionary', 'Lexicon', 'Multilingual'],
-                githubUrl: 'https://github.com/atmabodha/Vedanta_Datasets/blob/master/Glossary.csv',
-                stats: { size: '5MB' },
+                title: 'Valmiki Ramayana',
+                description: 'English translation of all the verses of Valmiki Ramayana.',
+                tags: ['Rama', 'Sita', 'Hanuman'],
+                githubUrl: 'https://github.com/atmabodha/Vedanta_Datasets/tree/main/Valmiki_Ramayana',
                 icon: 'book-open'
             }
         ];
@@ -291,38 +287,34 @@
         const openNlpProjects = [
             {
                 id: 'p1',
-                title: 'Vedanta-BERT Pre-training',
-                description: 'Scripts and configuration to fine-tune BERT models on a massive corpus of Indian philosophical texts for better context awareness.',
+                title: 'RAG Chatbot for Bhagavad Gita',
+                description: 'Winning entries from a Hackathon we organised in Jan 2025 to build a RAG chatbot for answering spiritual queries based on authentic texts.',
                 tags: ['Transformers', 'BERT', 'LLM'],
-                githubUrl: 'https://github.com/atmabodha/opennlp/tree/master/vedanta-bert',
-                stats: { stars: 85, forks: 12 },
+                githubUrl: 'https://github.com/atmabodha/OpenNLP/tree/main/NYD_Hackathon_2025',
                 icon: 'brain-circuit'
             },
             {
                 id: 'p2',
-                title: 'Sanskrit Sandhi Splitter',
-                description: 'A rule-based and ML-hybrid approach to breaking down complex Sanskrit compound words (Sandhi) into constituent terms.',
-                tags: ['Tokenization', 'Morphology', 'Sanskrit'],
-                githubUrl: 'https://github.com/atmabodha/opennlp/tree/master/sandhi-splitter',
-                stats: { stars: 64 },
+                title: 'AI Fact Checker for Ramayana',
+                description: 'Winning entries from a Hackathon we organised in June 2025 to build an AI based fact checker for Valmiki Ramayana.',
+                tags: ['Tokenization', 'Morphology', 'NLP'],
+                githubUrl: 'https://github.com/atmabodha/OpenNLP/tree/main/IYD_Hackathon_2025',
                 icon: 'code-2'
             },
             {
                 id: 'p3',
-                title: 'Sutra QA System',
-                description: 'A Question-Answering pipeline designed to answer natural language queries based on the logic of the Brahma Sutras.',
-                tags: ['QA', 'RAG', 'Logic'],
-                githubUrl: 'https://github.com/atmabodha/opennlp/tree/master/qa-system',
-                stats: { stars: 45 },
+                title: 'Flux Fine TUning',
+                description: 'A fine tuned Flux model to generate images of Vivekananda in different poses.',
+                tags: ['Image', 'FLux', 'Generate'],
+                githubUrl: 'https://github.com/atmabodha/OpenNLP/tree/main/Flux_FineTune',
                 icon: 'message-square-text'
             },
             {
                 id: 'p4',
-                title: 'Semantic Search Engine',
-                description: 'Vector-based search implementation allowing users to find concepts across multiple texts regardless of specific keyword matches.',
-                tags: ['Search', 'Embeddings', 'Vector DB'],
-                githubUrl: 'https://github.com/atmabodha/opennlp/tree/master/semantic-search',
-                stats: { stars: 90 },
+                title: 'Cleaned Lang8 Dataset',
+                description: 'Cleaned Lang8 dataset to train models for predicting grammatical correctness of English sentences.',
+                tags: ['GED', 'Embeddings', 'Classification'],
+                githubUrl: 'https://github.com/atmabodha/OpenNLP/tree/main/Cleaned%20Lang8%20GED',
                 icon: 'search'
             }
         ];
