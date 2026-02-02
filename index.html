@@ -1,149 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Source Vedanta AI | Build the Future</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vedanta AI - Digital Dharma</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Merriweather', 'serif'],
+            },
+            colors: {
+              saffron: {
+                50: '#fff7ed',
+                100: '#ffedd5',
+                200: '#fed7aa',
+                300: '#fdba74',
+                400: '#fb923c',
+                500: '#f97316',
+                600: '#ea580c',
+                700: '#c2410c',
+                800: '#9a3412',
+                900: '#7c2d12',
+              },
+              slate: {
+                850: '#1e293b',
+                900: '#0f172a',
+                950: '#020617',
+              }
+            }
+          }
+        }
+      }
+    </script>
     <style>
-        :root {
-            --primary: #5e35b1; /* Deep Purple for Wisdom/Tech */
-            --secondary: #00897b; /* Teal for Open Source */
-        }
-        
-        /* Hero Section */
-        header.hero {
-            background: linear-gradient(135deg, #1a237e 0%, #4527a0 100%);
-            color: white;
-            padding: 4rem 1rem;
-            text-align: center;
-            border-radius: 0 0 50px 50px;
-            margin-bottom: 3rem;
-        }
-        header.hero h1 { margin-bottom: 0.5rem; color: white; }
-        header.hero p { color: rgba(255,255,255,0.8); font-size: 1.2rem; }
-        
-        /* Repo Cards */
-        .repo-card {
-            border-top: 5px solid var(--secondary);
-            transition: transform 0.2s;
-            height: 100%;
-        }
-        .repo-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        /* Action Buttons */
-        .btn-github {
-            background-color: #24292e;
-            border-color: #24292e;
-            color: white;
-        }
-        .btn-github:hover {
-            background-color: #444;
-        }
-
-        /* UTMT Section */
-        .learning-section {
-            background-color: #f1f8e9;
-            border-radius: 15px;
-            padding: 3rem;
-            text-align: center;
-            margin-top: 4rem;
-            border: 1px solid #c5e1a5;
-        }
-        .learning-section h2 { color: #2e7d32; }
-
-        footer { text-align: center; margin-top: 3rem; opacity: 0.7; font-size: 0.8rem; }
+      body {
+        background-color: #fcfbf9; /* Warm off-white paper tone */
+        color: #1e293b;
+      }
+      .scroll-smooth {
+        scroll-behavior: smooth;
+      }
     </style>
 </head>
-<body>
+<body class="scroll-smooth antialiased flex flex-col min-h-screen">
 
-    <header class="hero">
-        <div class="container">
-            <h1><i class="fas fa-brain"></i> Open Source Vedanta AI</h1>
-            <p>Bridging Ancient Wisdom with Modern Machine Learning</p>
-            <br>
-            <p style="font-size: 0.9rem; max-width: 600px; margin: 0 auto;">
-                "The next revolution in AI won't just be about more parameters—it will be about deeper meaning. 
-                We provide the open-source datasets and NLP tools you need to build it."
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <span class="text-saffron-600"><i data-lucide="scroll-text" class="w-6 h-6"></i></span>
+                    <span class="font-serif font-bold text-slate-900 text-lg">Vedanta AI</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#mission" class="text-sm font-medium text-slate-600 hover:text-saffron-600 transition-colors">Mission</a>
+                    <a href="#datasets" class="text-sm font-medium text-slate-600 hover:text-saffron-600 transition-colors">Datasets</a>
+                    <a href="#projects" class="text-sm font-medium text-slate-600 hover:text-saffron-600 transition-colors">Projects</a>
+                    <a href="https://github.com/atmabodha" target="_blank" class="px-4 py-2 bg-slate-900 text-white rounded-md text-sm font-medium hover:bg-slate-800 transition-colors flex items-center gap-2">
+                        <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-saffron-100 rounded-full blur-3xl opacity-50 z-0"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-50 z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-saffron-50 border border-saffron-100 text-saffron-700 text-xs font-semibold uppercase tracking-wide mb-6">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Open Source Initiative
+            </div>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-slate-900 mb-6 leading-tight">
+                Code the <span class="text-transparent bg-clip-text bg-gradient-to-r from-saffron-600 to-red-600">Eternal Wisdom</span>
+            </h1>
+            <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Bridging the gap between ancient Vedanta and modern Artificial Intelligence. 
+                Join us in digitizing, analyzing, and preserving the knowledge of the ages through Open Source.
             </p>
-        </div>
-    </header>
-
-    <main class="container">
-
-        <div class="grid">
-            <div>
-                <h3>Why Build With This?</h3>
-                <p>We believe the structured logic of Vedanta offers unique frameworks for Semantic AI and Natural Language Understanding. These repositories are free, open, and ready for your code.</p>
-            </div>
-            <div>
-                <h3>The Mission</h3>
-                <p>To create a decentralized ecosystem of AI tools—chatbots, search engines, and analyzers—grounded in the Indian knowledge systems. Built by the community, for the community.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#datasets" class="px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
+                    Explore Datasets <i data-lucide="database" class="w-4.5 h-4.5"></i>
+                </a>
+                <a href="#projects" class="px-8 py-4 bg-white text-slate-900 border border-slate-200 rounded-lg font-semibold hover:bg-slate-50 transition-all flex items-center justify-center gap-2 shadow-sm hover:shadow-md">
+                    View Projects <i data-lucide="code" class="w-4.5 h-4.5"></i>
+                </a>
             </div>
         </div>
+    </section>
 
-        <hr>
+    <section id="mission" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 relative">
+                    <div class="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative shadow-2xl">
+                        <img 
+                            src="https://photos.google.com/share/AF1QipP32dmJOj7blXbd8TZxF86_4kI5a-WE__L21OSwuYGN4-DhUGuC3Iik5rYqcU6nAg/photo/AF1QipOfRxElJW5lHV5P0eNyzSnmge2W-to1Vsb7I5Ka?key=Rkl4ZElfS2VSQkoyclJnVG80V1VlZThVdzVMRnp3" 
+                            alt="Ancient Manuscript and Code" 
+                            class="w-full h-full object-cover opacity-80"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-tr from-slate-900/40 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-white p-4 bg-black/30 backdrop-blur-sm rounded-lg border border-white/10">
+                            <p class="font-serif italic">"Knowledge removes ignorance as light removes darkness."</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="text-3xl font-serif font-bold text-slate-900 mb-6">Our Mission</h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        We are building the digital infrastructure for Vedantic studies. By leveraging Machine Learning and Natural Language Processing, we aim to uncover patterns, create accessible translations, and preserve the sanctity of these texts for future generations.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 p-1 bg-saffron-100 rounded text-saffron-600"><i data-lucide="globe" class="w-4.5 h-4.5"></i></div>
+                            <span class="text-slate-700"><strong>Universal Access:</strong> Making texts accessible via modern APIs.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 p-1 bg-blue-100 rounded text-blue-600"><i data-lucide="cpu" class="w-4.5 h-4.5"></i></div>
+                            <span class="text-slate-700"><strong>Computational Analysis:</strong> Applying LLMs to interpret commentaries.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 p-1 bg-emerald-100 rounded text-emerald-600"><i data-lucide="code" class="w-4.5 h-4.5"></i></div>
+                            <span class="text-slate-700"><strong>Open Collaboration:</strong> A community-driven approach to Digital Dharma.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h2 style="text-align:center; margin-bottom: 2rem;">The Open Source Stack</h2>
-        
-        <div class="grid">
-            
-            <article class="repo-card">
-                <header>
-                    <strong><i class="fas fa-database"></i> The Data</strong>
-                </header>
-                <h3>Vedanta Datasets</h3>
-                <p>Clean, structured CSV data ready for Machine Learning pipelines.</p>
-                <ul>
-                    <li><strong>Bhagwad Gita:</strong> Full 700 verses with English Q&A pairs.</li>
-                    <li><strong>Format:</strong> CSV (Comma Separated Values).</li>
-                    <li><strong>Ready for:</strong> RAG (Retrieval Augmented Generation), Fine-tuning.</li>
-                </ul>
-                <footer>
-                    <a href="https://github.com/atmabodha/Vedanta_Datasets/tree/main/Bhagwad_Gita" role="button" class="btn-github">
-                        <i class="fab fa-github"></i> Browse Data
-                    </a>
-                </footer>
-            </article>
+    <section id="datasets" class="py-20 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-saffron-600 font-bold tracking-wider uppercase text-sm">Repository Showcase</span>
+                <h2 class="text-4xl font-serif font-bold text-slate-900 mt-2 mb-4">Vedanta Datasets</h2>
+                <p class="max-w-2xl mx-auto text-slate-600">
+                    Curated, cleaned, and structured datasets ready for Machine Learning pipelines. 
+                    Sourced from the <a href="https://github.com/atmabodha/Vedanta_Datasets" class="text-saffron-600 hover:underline decoration-2 underline-offset-2">Vedanta_Datasets</a> repository.
+                </p>
+            </div>
 
-            <article class="repo-card">
-                <header>
-                    <strong><i class="fas fa-code"></i> The Code</strong>
-                </header>
-                <h3>OpenNLP Tools</h3>
-                <p>Python scripts and utilities for processing text and building models.</p>
-                <ul>
-                    <li><strong>Language:</strong> Python.</li>
-                    <li><strong>Focus:</strong> Natural Language Processing (NLP).</li>
-                    <li><strong>Use it to:</strong> Parse the datasets, extract entities, or build your own bot.</li>
-                </ul>
-                <footer>
-                    <a href="https://github.com/atmabodha/OpenNLP" role="button" class="btn-github">
-                        <i class="fab fa-github"></i> Get the Code
-                    </a>
-                </footer>
-            </article>
+            <div id="dataset-container" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                </div>
+        </div>
+    </section>
 
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-bold tracking-wider uppercase text-sm">Tools & Models</span>
+                <h2 class="text-4xl font-serif font-bold text-slate-900 mt-2 mb-4">OpenNLP Projects</h2>
+                <p class="max-w-2xl mx-auto text-slate-600">
+                    State-of-the-art NLP implementations tailored for Sanskrit and philosophical texts.
+                    Powered by the <a href="https://github.com/atmabodha/opennlp" class="text-blue-600 hover:underline decoration-2 underline-offset-2">OpenNLP</a> repository.
+                </p>
+            </div>
+
+            <div id="project-container" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-900 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/20 rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/20 rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-white/20 rounded-full"></div>
         </div>
 
-        <section class="learning-section">
-            <h2><i class="fas fa-graduation-cap"></i> Don't Just Watch. Build.</h2>
-            <p>You don't need a PhD to contribute to the AI revolution. <br>We teach you how to build real-world applications using this exact data.</p>
-            <br>
-            <a href="https://www.utmt.org/" role="button" style="background-color: #2e7d32; border-color: #2e7d32;">
-                Start Learning at UTMT.org &rarr;
-            </a>
-        </section>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
+                Ready to Build the Future of Ancient Wisdom?
+            </h2>
+            <p class="text-xl text-slate-300 mb-10 leading-relaxed">
+                Your code can help unlock the secrets of the Upanishads for the whole world.
+                Whether you are a data scientist, linguist, or frontend developer, there is a place for you.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a 
+                    href="https://github.com/atmabodha" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-8 py-4 bg-saffron-600 text-white rounded-lg font-bold text-lg hover:bg-saffron-500 transition-all shadow-[0_0_20px_rgba(234,88,12,0.5)] hover:shadow-[0_0_30px_rgba(234,88,12,0.6)] flex items-center justify-center gap-2"
+                >
+                    Start Contributing <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a
+                    href="https://www.utmt.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-8 py-4 bg-transparent border border-slate-600 text-white rounded-lg font-bold text-lg hover:bg-slate-800 transition-all flex items-center justify-center gap-2"
+                >
+                    Visit UTMT Portal <i data-lucide="globe" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-    </main>
-
-    <footer>
-        <p>Maintained by <a href="https://github.com/atmabodha">atmabodha</a> on GitHub.</p>
+    <footer class="bg-slate-950 py-12 text-slate-400 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <span class="text-white text-lg font-serif font-bold flex items-center gap-2 mb-4">
+                        <i data-lucide="scroll-text" class="w-5 h-5 text-saffron-600"></i> Vedanta AI
+                    </span>
+                    <p class="text-sm leading-relaxed max-w-sm">
+                        An open-source initiative dedicated to preserving and analyzing ancient Indian philosophical texts using modern Artificial Intelligence and Machine Learning technologies.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-saffron-500 transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-saffron-500 transition-colors">API Reference</a></li>
+                        <li><a href="#" class="hover:text-saffron-500 transition-colors">Contributing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Community</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://github.com/atmabodha" class="hover:text-saffron-500 transition-colors">GitHub</a></li>
+                        <li><a href="#" class="hover:text-saffron-500 transition-colors">Discord</a></li>
+                        <li><a href="https://www.utmt.org/" class="hover:text-saffron-500 transition-colors">UTMT</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+                <p>&copy; 2026 Vedanta AI Initiative. Open Source under MIT License.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <script>
+        // Data derived from data.ts
+        const vedantaDatasets = [
+            {
+                id: 'd1',
+                title: 'Bhagavad Gita Parallel Corpus',
+                description: 'A comprehensive alignment of Sanskrit verses with English translations, including word-by-word grammatical analysis for NLP training.',
+                tags: ['Sanskrit', 'English', 'Alignment', 'Gita'],
+                githubUrl: 'https://github.com/atmabodha/Vedanta_Datasets/tree/master/Bhagavad_Gita',
+                stats: { size: '15MB', stars: 120 },
+                icon: 'scroll'
+            },
+            {
+                id: 'd2',
+                title: 'Upanishad Sentiment & Topic Model',
+                description: 'Labeled dataset classifying verses from Major Upanishads based on philosophical themes (Brahman, Atman, Maya) and emotional tone.',
+                tags: ['Classification', 'Theology', 'NLP'],
+                githubUrl: 'https://github.com/atmabodha/Vedanta_Datasets/tree/master/Upanishads',
+                stats: { size: '45MB' },
+                icon: 'database'
+            },
+            {
+                id: 'd3',
+                title: 'Shankara Bhashya Structured Text',
+                description: 'Digitized and structured commentary of Adi Shankaracharya on the Brahma Sutras, formatted for semantic search and retrieval.',
+                tags: ['Commentary', 'Advaita', 'Structured'],
+                githubUrl: 'https://github.com/atmabodha/Vedanta_Datasets/tree/master/Brahma_Sutras',
+                stats: { size: '120MB' },
+                icon: 'layers'
+            },
+            {
+                id: 'd4',
+                title: 'Vedantic Glossary (Multilingual)',
+                description: 'A mapped dictionary of technical Vedantic terms across Sanskrit, English, Hindi, and Tamil for cross-lingual understanding.',
+                tags: ['Dictionary', 'Lexicon', 'Multilingual'],
+                githubUrl: 'https://github.com/atmabodha/Vedanta_Datasets/blob/master/Glossary.csv',
+                stats: { size: '5MB' },
+                icon: 'book-open'
+            }
+        ];
+
+        const openNlpProjects = [
+            {
+                id: 'p1',
+                title: 'Vedanta-BERT Pre-training',
+                description: 'Scripts and configuration to fine-tune BERT models on a massive corpus of Indian philosophical texts for better context awareness.',
+                tags: ['Transformers', 'BERT', 'LLM'],
+                githubUrl: 'https://github.com/atmabodha/opennlp/tree/master/vedanta-bert',
+                stats: { stars: 85, forks: 12 },
+                icon: 'brain-circuit'
+            },
+            {
+                id: 'p2',
+                title: 'Sanskrit Sandhi Splitter',
+                description: 'A rule-based and ML-hybrid approach to breaking down complex Sanskrit compound words (Sandhi) into constituent terms.',
+                tags: ['Tokenization', 'Morphology', 'Sanskrit'],
+                githubUrl: 'https://github.com/atmabodha/opennlp/tree/master/sandhi-splitter',
+                stats: { stars: 64 },
+                icon: 'code-2'
+            },
+            {
+                id: 'p3',
+                title: 'Sutra QA System',
+                description: 'A Question-Answering pipeline designed to answer natural language queries based on the logic of the Brahma Sutras.',
+                tags: ['QA', 'RAG', 'Logic'],
+                githubUrl: 'https://github.com/atmabodha/opennlp/tree/master/qa-system',
+                stats: { stars: 45 },
+                icon: 'message-square-text'
+            },
+            {
+                id: 'p4',
+                title: 'Semantic Search Engine',
+                description: 'Vector-based search implementation allowing users to find concepts across multiple texts regardless of specific keyword matches.',
+                tags: ['Search', 'Embeddings', 'Vector DB'],
+                githubUrl: 'https://github.com/atmabodha/opennlp/tree/master/semantic-search',
+                stats: { stars: 90 },
+                icon: 'search'
+            }
+        ];
+
+        // Function to render cards
+        function createCard(item) {
+            // Generate tags HTML
+            const tagsHtml = item.tags.map(tag => 
+                `<span class="px-2 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded-md">${tag}</span>`
+            ).join('');
+
+            // Generate stats HTML
+            let statsHtml = '';
+            if (item.stats) {
+                const parts = [];
+                if (item.stats.stars) parts.push(`<span class="flex items-center gap-1"><i data-lucide="star" class="w-3 h-3"></i> ${item.stats.stars}</span>`);
+                if (item.stats.forks) parts.push(`<span class="flex items-center gap-1"><i data-lucide="git-fork" class="w-3 h-3"></i> ${item.stats.forks}</span>`);
+                if (item.stats.size) parts.push(`<span class="flex items-center gap-1"><i data-lucide="hard-drive" class="w-3 h-3"></i> ${item.stats.size}</span>`);
+                statsHtml = `<div class="flex items-center gap-3 text-xs text-slate-400 mt-4 pt-4 border-t border-slate-100">${parts.join('')}</div>`;
+            }
+
+            // Return HTML String
+            return `
+            <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg hover:border-saffron-200 transition-all group flex flex-col h-full">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="p-3 bg-slate-50 rounded-lg text-slate-700 group-hover:bg-saffron-50 group-hover:text-saffron-600 transition-colors">
+                        <i data-lucide="${item.icon}" class="w-6 h-6"></i>
+                    </div>
+                    <a href="${item.githubUrl}" target="_blank" class="text-slate-400 hover:text-slate-900 transition-colors">
+                        <i data-lucide="external-link" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                
+                <h3 class="text-xl font-bold text-slate-900 mb-2 font-serif">${item.title}</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">${item.description}</p>
+                
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    ${tagsHtml}
+                </div>
+                
+                ${statsHtml}
+            </div>
+            `;
+        }
+
+        // Render function
+        document.addEventListener('DOMContentLoaded', () => {
+            const datasetContainer = document.getElementById('dataset-container');
+            const projectContainer = document.getElementById('project-container');
+
+            // Inject Datasets
+            if (datasetContainer) {
+                datasetContainer.innerHTML = vedantaDatasets.map(item => createCard(item)).join('');
+            }
+
+            // Inject Projects
+            if (projectContainer) {
+                projectContainer.innerHTML = openNlpProjects.map(item => createCard(item)).join('');
+            }
+
+            // Initialize Lucide Icons
+            lucide.createIcons();
+        });
+    </script>
 </body>
 </html>
