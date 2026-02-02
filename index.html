@@ -3,167 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vedanta Datasets | AI & Research Ready</title>
+    <title>Open Source Vedanta AI | Build the Future</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #d81b60; /* Deep Saffron/Maroon hint */
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        /* Hero Section */
-        header.hero {
-            background-color: #f8f9fa;
-            padding: 3rem 0;
-            text-align: center;
-            border-bottom: 1px solid #e5e5e5;
-            margin-bottom: 2rem;
-        }
-        header.hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-        header.hero p {
-            color: #666;
-            font-size: 1.1rem;
+            --primary: #5e35b1; /* Deep Purple for Wisdom/Tech */
+            --secondary: #00897b; /* Teal for Open Source */
         }
         
-        /* Dataset Cards */
-        .dataset-card {
-            border-left: 5px solid var(--primary);
-            margin-bottom: 2rem;
-            transition: transform 0.2s ease;
-        }
-        .dataset-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-        .badge {
-            background: #eee;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            color: #555;
-            margin-right: 5px;
-        }
-
-        /* UTMT Call to Action Box */
-        .cta-box {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+        /* Hero Section */
+        header.hero {
+            background: linear-gradient(135deg, #1a237e 0%, #4527a0 100%);
             color: white;
-            padding: 2rem;
-            border-radius: 12px;
+            padding: 4rem 1rem;
             text-align: center;
-            margin: 3rem 0;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 3rem;
         }
-        .cta-box h3 { color: white; margin-bottom: 1rem; }
-        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; }
-        .cta-button {
-            background: #ffcc00;
-            color: #333;
-            border: none;
-            font-weight: bold;
-            padding: 10px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: background 0.2s;
+        header.hero h1 { margin-bottom: 0.5rem; color: white; }
+        header.hero p { color: rgba(255,255,255,0.8); font-size: 1.2rem; }
+        
+        /* Repo Cards */
+        .repo-card {
+            border-top: 5px solid var(--secondary);
+            transition: transform 0.2s;
+            height: 100%;
         }
-        .cta-button:hover {
-            background: #e6b800;
-            color: #000;
-            text-decoration: none;
+        .repo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* Footer */
-        footer {
-            margin-top: auto;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            background: #f1f1f1;
+        /* Action Buttons */
+        .btn-github {
+            background-color: #24292e;
+            border-color: #24292e;
+            color: white;
         }
+        .btn-github:hover {
+            background-color: #444;
+        }
+
+        /* UTMT Section */
+        .learning-section {
+            background-color: #f1f8e9;
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 4rem;
+            border: 1px solid #c5e1a5;
+        }
+        .learning-section h2 { color: #2e7d32; }
+
+        footer { text-align: center; margin-top: 3rem; opacity: 0.7; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
     <header class="hero">
         <div class="container">
-            <h1><i class="fas fa-book-open"></i> Vedanta Datasets</h1>
-            <p>Open-source, structured datasets of ancient texts for Machine Learning & NLP analysis.</p>
-            <a href="https://github.com/atmabodha/Vedanta_Datasets" role="button" class="outline">
-                <i class="fab fa-github"></i> View on GitHub
-            </a>
+            <h1><i class="fas fa-brain"></i> Open Source Vedanta AI</h1>
+            <p>Bridging Ancient Wisdom with Modern Machine Learning</p>
+            <br>
+            <p style="font-size: 0.9rem; max-width: 600px; margin: 0 auto;">
+                "The next revolution in AI won't just be about more parameters—it will be about deeper meaning. 
+                We provide the open-source datasets and NLP tools you need to build it."
+            </p>
         </div>
     </header>
 
     <main class="container">
-        
-        <h2 id="catalog">Dataset Catalog</h2>
-        <p>Browse structured CSV files ready for import into Pandas, SQL, or LLM contexts.</p>
 
-        <article class="dataset-card">
-            <header>
-                <strong>Bhagavad Gita</strong>
-                <span style="float:right"><span class="badge">CSV</span> <span class="badge">NLP</span></span>
-            </header>
-            <p>A comprehensive dataset containing all 700 verses of the Gita.</p>
-            <ul>
-                <li><strong>Structure:</strong> Chapter, Verse Number, Sanskrit Sloka, English Translation.</li>
-                <li><strong>Use Case:</strong> Sentiment analysis, semantic search, and Q&A bot training.</li>
-                <li><strong>Location:</strong> <code>/Bhagwad_Gita/</code></li>
-            </ul>
-            <footer>
-                <a href="https://github.com/atmabodha/Vedanta_Datasets/tree/master/Bhagwad_Gita" target="_blank">Browse Files &rarr;</a>
-            </footer>
-        </article>
-
-        <article class="dataset-card">
-            <header>
-                <strong>Upanishads</strong>
-                <span style="float:right"><span class="badge">Text</span> <span class="badge">Philosophy</span></span>
-            </header>
-            <p>Structured text from major Upanishads focusing on non-dualistic philosophy.</p>
-            <ul>
-                <li><strong>Texts Included:</strong> Isha, Kena, Katha, and others.</li>
-                <li><strong>Structure:</strong> Verse-by-verse mapping with analysis columns.</li>
-                <li><strong>Use Case:</strong> Topic modeling and philosophical concept extraction.</li>
-            </ul>
-            <footer>
-                <a href="https://github.com/atmabodha/Vedanta_Datasets/tree/master/Upanishads" target="_blank">Browse Files &rarr;</a>
-            </footer>
-        </article>
-
-        <article class="dataset-card">
-            <header>
-                <strong>Brahma Sutras</strong>
-                <span style="float:right"><span class="badge">Advanced</span> <span class="badge">Sanskrit</span></span>
-            </header>
-            <p>A dataset of the aphorisms by Badarayana that systematize the teachings of the Upanishads.</p>
-            <ul>
-                <li><strong>Structure:</strong> Adhyaya (Chapter), Pada (Section), and Sutra content.</li>
-                <li><strong>Use Case:</strong> Logic mapping and argument structure analysis.</li>
-            </ul>
-            <footer>
-                <a href="https://github.com/atmabodha/Vedanta_Datasets/tree/master/Brahma_Sutras" target="_blank">Browse Files &rarr;</a>
-            </footer>
-        </article>
-
-        <div class="cta-box">
-            <h3><i class="fas fa-graduation-cap"></i> Build Cool Stuff With This Data</h3>
-            <p>Want to learn how to build AI apps, chatbots, or analysis tools using these datasets? Join the community at UTMT.</p>
-            <a href="https://www.utmt.org/" class="cta-button" target="_blank">Start Learning at UTMT.org</a>
+        <div class="grid">
+            <div>
+                <h3>Why Build With This?</h3>
+                <p>We believe the structured logic of Vedanta offers unique frameworks for Semantic AI and Natural Language Understanding. These repositories are free, open, and ready for your code.</p>
+            </div>
+            <div>
+                <h3>The Mission</h3>
+                <p>To create a decentralized ecosystem of AI tools—chatbots, search engines, and analyzers—grounded in the Indian knowledge systems. Built by the community, for the community.</p>
+            </div>
         </div>
+
+        <hr>
+
+        <h2 style="text-align:center; margin-bottom: 2rem;">The Open Source Stack</h2>
+        
+        <div class="grid">
+            
+            <article class="repo-card">
+                <header>
+                    <strong><i class="fas fa-database"></i> The Data</strong>
+                </header>
+                <h3>Vedanta Datasets</h3>
+                <p>Clean, structured CSV data ready for Machine Learning pipelines.</p>
+                <ul>
+                    <li><strong>Bhagwad Gita:</strong> Full 700 verses with English Q&A pairs.</li>
+                    <li><strong>Format:</strong> CSV (Comma Separated Values).</li>
+                    <li><strong>Ready for:</strong> RAG (Retrieval Augmented Generation), Fine-tuning.</li>
+                </ul>
+                <footer>
+                    <a href="https://github.com/atmabodha/Vedanta_Datasets/tree/main/Bhagwad_Gita" role="button" class="btn-github">
+                        <i class="fab fa-github"></i> Browse Data
+                    </a>
+                </footer>
+            </article>
+
+            <article class="repo-card">
+                <header>
+                    <strong><i class="fas fa-code"></i> The Code</strong>
+                </header>
+                <h3>OpenNLP Tools</h3>
+                <p>Python scripts and utilities for processing text and building models.</p>
+                <ul>
+                    <li><strong>Language:</strong> Python.</li>
+                    <li><strong>Focus:</strong> Natural Language Processing (NLP).</li>
+                    <li><strong>Use it to:</strong> Parse the datasets, extract entities, or build your own bot.</li>
+                </ul>
+                <footer>
+                    <a href="https://github.com/atmabodha/OpenNLP" role="button" class="btn-github">
+                        <i class="fab fa-github"></i> Get the Code
+                    </a>
+                </footer>
+            </article>
+
+        </div>
+
+        <section class="learning-section">
+            <h2><i class="fas fa-graduation-cap"></i> Don't Just Watch. Build.</h2>
+            <p>You don't need a PhD to contribute to the AI revolution. <br>We teach you how to build real-world applications using this exact data.</p>
+            <br>
+            <a href="https://www.utmt.org/" role="button" style="background-color: #2e7d32; border-color: #2e7d32;">
+                Start Learning at UTMT.org &rarr;
+            </a>
+        </section>
 
     </main>
 
     <footer>
-        <p>Maintained by <strong>atmabodha</strong> (gmail ID). Hosted on GitHub Pages.</p>
+        <p>Maintained by <a href="https://github.com/atmabodha">atmabodha</a> on GitHub.</p>
     </footer>
 
 </body>
