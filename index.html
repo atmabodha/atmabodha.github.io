@@ -3,125 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vedanta Dataset Browser</title>
+    <title>Vedanta Datasets | AI & Research Ready</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .container { padding-top: 2rem; }
-        .verse-card { margin-top: 2rem; padding: 1.5rem; border-radius: 8px; background: #f8f9fa; border: 1px solid #e0e0e0; }
-        .sanskrit { font-size: 1.4rem; color: #2c3e50; margin-bottom: 1rem; }
-        footer { margin-top: 3rem; font-size: 0.8rem; opacity: 0.7; }
+        :root {
+            --primary: #d81b60; /* Deep Saffron/Maroon hint */
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        /* Hero Section */
+        header.hero {
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 2rem;
+        }
+        header.hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        header.hero p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        /* Dataset Cards */
+        .dataset-card {
+            border-left: 5px solid var(--primary);
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+        .dataset-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .badge {
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: #555;
+            margin-right: 5px;
+        }
+
+        /* UTMT Call to Action Box */
+        .cta-box {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        .cta-box h3 { color: white; margin-bottom: 1rem; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; }
+        .cta-button {
+            background: #ffcc00;
+            color: #333;
+            border: none;
+            font-weight: bold;
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .cta-button:hover {
+            background: #e6b800;
+            color: #000;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            background: #f1f1f1;
+        }
     </style>
 </head>
 <body>
 
+    <header class="hero">
+        <div class="container">
+            <h1><i class="fas fa-book-open"></i> Vedanta Datasets</h1>
+            <p>Open-source, structured datasets of ancient texts for Machine Learning & NLP analysis.</p>
+            <a href="https://github.com/atmabodha/Vedanta_Datasets" role="button" class="outline">
+                <i class="fab fa-github"></i> View on GitHub
+            </a>
+        </div>
+    </header>
+
     <main class="container">
-        <hgroup>
-            <h1>Vedanta Dataset Browser</h1>
-            <h2>Explore the Bhagavad Gita & Upanishads</h2>
-        </hgroup>
+        
+        <h2 id="catalog">Dataset Catalog</h2>
+        <p>Browse structured CSV files ready for import into Pandas, SQL, or LLM contexts.</p>
 
-        <section id="selectors">
-            <div class="grid">
-                <label for="chapter">Chapter
-                    <select id="chapter" disabled>
-                        <option value="">Loading Chapters...</option>
-                    </select>
-                </label>
+        <article class="dataset-card">
+            <header>
+                <strong>Bhagavad Gita</strong>
+                <span style="float:right"><span class="badge">CSV</span> <span class="badge">NLP</span></span>
+            </header>
+            <p>A comprehensive dataset containing all 700 verses of the Gita.</p>
+            <ul>
+                <li><strong>Structure:</strong> Chapter, Verse Number, Sanskrit Sloka, English Translation.</li>
+                <li><strong>Use Case:</strong> Sentiment analysis, semantic search, and Q&A bot training.</li>
+                <li><strong>Location:</strong> <code>/Bhagwad_Gita/</code></li>
+            </ul>
+            <footer>
+                <a href="https://github.com/atmabodha/Vedanta_Datasets/tree/master/Bhagwad_Gita" target="_blank">Browse Files &rarr;</a>
+            </footer>
+        </article>
 
-                <label for="verse">Verse
-                    <select id="verse" disabled>
-                        <option value="">Select Chapter First</option>
-                    </select>
-                </label>
-            </div>
-        </section>
+        <article class="dataset-card">
+            <header>
+                <strong>Upanishads</strong>
+                <span style="float:right"><span class="badge">Text</span> <span class="badge">Philosophy</span></span>
+            </header>
+            <p>Structured text from major Upanishads focusing on non-dualistic philosophy.</p>
+            <ul>
+                <li><strong>Texts Included:</strong> Isha, Kena, Katha, and others.</li>
+                <li><strong>Structure:</strong> Verse-by-verse mapping with analysis columns.</li>
+                <li><strong>Use Case:</strong> Topic modeling and philosophical concept extraction.</li>
+            </ul>
+            <footer>
+                <a href="https://github.com/atmabodha/Vedanta_Datasets/tree/master/Upanishads" target="_blank">Browse Files &rarr;</a>
+            </footer>
+        </article>
 
-        <section id="display">
-            <div id="verse-content" class="verse-card" style="display:none;">
-                <h3 id="verse-title"></h3>
-                <p id="verse-sanskrit" class="sanskrit"></p>
-                <hr>
-                <p id="verse-translation"></p>
-            </div>
-        </section>
+        <article class="dataset-card">
+            <header>
+                <strong>Brahma Sutras</strong>
+                <span style="float:right"><span class="badge">Advanced</span> <span class="badge">Sanskrit</span></span>
+            </header>
+            <p>A dataset of the aphorisms by Badarayana that systematize the teachings of the Upanishads.</p>
+            <ul>
+                <li><strong>Structure:</strong> Adhyaya (Chapter), Pada (Section), and Sutra content.</li>
+                <li><strong>Use Case:</strong> Logic mapping and argument structure analysis.</li>
+            </ul>
+            <footer>
+                <a href="https://github.com/atmabodha/Vedanta_Datasets/tree/master/Brahma_Sutras" target="_blank">Browse Files &rarr;</a>
+            </footer>
+        </article>
 
-        <footer>
-            Data sourced from <a href="https://github.com/atmabodha/Vedanta_Datasets">atmabodha/Vedanta_Datasets</a>
-        </footer>
+        <div class="cta-box">
+            <h3><i class="fas fa-graduation-cap"></i> Build Cool Stuff With This Data</h3>
+            <p>Want to learn how to build AI apps, chatbots, or analysis tools using these datasets? Join the community at UTMT.</p>
+            <a href="https://www.utmt.org/" class="cta-button" target="_blank">Start Learning at UTMT.org</a>
+        </div>
+
     </main>
 
-    <script>
-        const CSV_URL = 'https://raw.githubusercontent.com/atmabodha/Vedanta_Datasets/master/Bhagavad_Gita/gita.csv';
-        let fullData = [];
+    <footer>
+        <p>Maintained by <strong>atmabodha</strong> (gmail ID). Hosted on GitHub Pages.</p>
+    </footer>
 
-        // 1. Fetch and Parse CSV
-        Papa.parse(CSV_URL, {
-            download: true,
-            header: true,
-            complete: function(results) {
-                fullData = results.data;
-                initApp();
-            }
-        });
-
-        function initApp() {
-            const chapterSelect = document.getElementById('chapter');
-            
-            // Get unique chapters
-            const chapters = [...new Set(fullData.map(item => item.chapter))].filter(Boolean);
-            
-            chapterSelect.innerHTML = '<option value="">Select a Chapter</option>';
-            chapters.forEach(ch => {
-                const opt = document.createElement('option');
-                opt.value = ch;
-                opt.textContent = `Chapter ${ch}`;
-                chapterSelect.appendChild(opt);
-            });
-            
-            chapterSelect.disabled = false;
-        }
-
-        // 2. Handle Chapter Selection
-        document.getElementById('chapter').addEventListener('change', function(e) {
-            const chapterVal = e.target.value;
-            const verseSelect = document.getElementById('verse');
-            const display = document.getElementById('verse-content');
-            
-            display.style.display = 'none';
-            verseSelect.innerHTML = '<option value="">Select a Verse</option>';
-            
-            if (chapterVal) {
-                const verses = fullData.filter(item => item.chapter === chapterVal);
-                verses.forEach(v => {
-                    const opt = document.createElement('option');
-                    opt.value = v.verse;
-                    opt.textContent = `Verse ${v.verse}`;
-                    verseSelect.appendChild(opt);
-                });
-                verseSelect.disabled = false;
-            } else {
-                verseSelect.disabled = true;
-            }
-        });
-
-        // 3. Handle Verse Selection
-        document.getElementById('verse').addEventListener('change', function(e) {
-            const verseVal = e.target.value;
-            const chapterVal = document.getElementById('chapter').value;
-            const display = document.getElementById('verse-content');
-
-            if (verseVal && chapterVal) {
-                const entry = fullData.find(item => item.chapter === chapterVal && item.verse === verseVal);
-                
-                if (entry) {
-                    document.getElementById('verse-title').textContent = `Chapter ${chapterVal}, Verse ${verseVal}`;
-                    document.getElementById('verse-sanskrit').textContent = entry.text || entry.sanskrit || "Sanskrit text not found";
-                    document.getElementById('verse-translation').textContent = entry.translation || entry.english || "Translation not found";
-                    display.style.display = 'block';
-                }
-            }
-        });
-    </script>
 </body>
 </html>
